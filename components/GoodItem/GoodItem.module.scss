@@ -1,0 +1,152 @@
+$blue-color: #30abe8;
+$pink-color: #e6196f;
+
+.container {
+  width: 328px;
+  margin: 20px;
+
+  @media (max-width: 375px) {
+    width: calc(328px * 0.9);
+  }
+}
+
+.border {
+  position: relative;
+  width: 328px;
+  height: 488px;
+  background-color: $blue-color;
+  border-radius: 14px;
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
+
+  @media (max-width: 375px) {
+    width: calc(328px * 0.9);
+  }
+
+  &:hover { 
+    background-color: lighten($blue-color, 10%);
+  }
+  &:hover .card__weight { 
+    background-color: lighten($blue-color, 10%);
+  }
+}
+
+.selected {
+  background-color: $pink-color !important;
+
+  &:hover { 
+    background-color: lighten($pink-color, 10%) !important;
+  }
+  &:hover .card__weight { 
+    background-color: lighten($pink-color, 10%) !important;
+  }
+}
+
+.border[aria-disabled="true"] {
+  filter: grayscale(1);
+
+  &:hover { 
+    background-color: $blue-color !important;
+  }
+  &:hover .card__weight { 
+    background-color: $blue-color !important;
+  }
+}
+
+.card {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 320px;
+  height: 480px;
+  background-color: #f2f2f2;
+  overflow: hidden;
+  border-radius: 11px;
+  clip-path: polygon(14.7% 0, 100% 0, 100% 100%, 0 100%, 0 9.7%);
+
+  @media (max-width: 375px) {
+    width: calc(320px * 0.9);
+  }
+}
+
+.card__image {
+  position: absolute;
+  bottom: -95px;
+  left: -21px;
+  width: 370px;
+  object-fit: cover;
+}
+
+.card__block {
+  margin-left: 50px;
+}
+
+.card__text {
+  margin: 19px 0 8px;
+}
+
+.card__name {
+  margin: 0 0 6px;
+  font-size: 48px;
+  line-height: 100%;
+}
+
+.card__taste {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 0 12px;
+}
+
+.card__portions,
+.card__promo {
+  font-size: 14px;
+  line-height: 16px;
+  color: #666;
+  margin: 0;
+}
+
+.card__weight {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  background-color: $blue-color;
+  border-radius: 50%;
+  font-size: 42px;
+  line-height: 70%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0;
+
+  span { font-size: 20px; }
+}
+
+.text {
+  font-size: 13px;
+  line-height: 16px;
+  color: #ffffff;
+  text-align: center;
+  filter: drop-shadow(0px 1px 0.5px #000000);
+}
+
+.btnBuy {
+  color: $blue-color;
+  text-decoration: none;
+  padding: 0;
+  border: none;
+  border-bottom: 1px dashed $blue-color;
+  background: transparent;
+  cursor: pointer;
+
+  &:hover { 
+    background-color: lighten($pink-color, 10%) !important;
+  }
+}
+
+.soldOut {
+  composes: text;
+  color: #ffff66;
+}
+

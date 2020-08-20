@@ -1,0 +1,23 @@
+.background {
+  background-image: url('/images/shadow.png');
+  min-height: 100vh;
+  padding: 50px 0;
+}
+
+.title {
+  font-weight: 100;
+  margin: 0 20px 16px;
+  font-size: 36px;
+  color: #fff;
+  text-align: center;
+  font-size: 36px;
+  filter: drop-shadow(0px 1px 0.5px #000000);
+}
+
+.goods {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-width: 1180px;
+  margin: 0 auto;
+}
